@@ -1,0 +1,245 @@
+/* ===============================
+  GLOBAL
+================================ */
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+}
+
+section {
+  padding-top: 100px; 
+  padding-bottom: 50px;
+}
+
+/* ===============================
+  NAVBAR (Styling tambahan)
+================================ */
+.navbar {
+  background: linear-gradient(90deg, #1e88e5, #42a5f5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.navbar .nav-link:hover {
+  color: #e3f2fd !important;
+}
+
+/* ===============================
+  HERO SECTION (Background Lokal)
+================================ */
+.hero-section {
+  min-height: 100vh;
+  /* PASTIKAN PATH INI SESUAI: images/bg_pdam.jpg */
+  background: linear-gradient(
+      rgba(30, 136, 229, 0.8), 
+      rgba(30, 136, 229, 0.8)
+    ),
+    url("gambarpdam.png") 
+      center/cover no-repeat;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+}
+
+
+/* ===============================
+  MAP
+================================ */
+.map-frame-container {
+  width: 100%;
+  height: 600px; 
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  position: relative; 
+}
+
+.map-frame-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ===============================
+  CARD & SECTION
+================================ */
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  font-weight: 600;
+  padding: 1rem 1.5rem; 
+}
+
+/* ===============================
+  TABLE
+================================ */
+.table thead th {
+  background-color: #bbdefb;
+  color: #0d47a1;
+  font-weight: 600;
+  text-align: center;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f8ff;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table-primary {
+  --bs-table-bg: #bbdefb; 
+  --bs-table-border-color: #90caf9;
+  font-weight: bold; 
+}
+
+/* ===============================
+  CHART
+================================ */
+canvas {
+  max-width: 100%;
+}
+
+/* ===============================
+  BUTTON
+================================ */
+.btn-primary {
+  background-color: #1e88e5 !important;
+  border-color: #1e88e5 !important;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #42a5f5 !important;
+  border-color: #42a5f5 !important;
+  transform: translateY(-2px); 
+}
+
+/* ===============================
+  ALERT / INSIGHT
+================================ */
+.alert-primary {
+    --bs-alert-bg: #e3f2fd;
+    --bs-alert-color: #0d47a1;
+    --bs-alert-border-color: #bbdefb;
+}
+.text-primary {
+    color: #1e88e5 !important;
+}
+.text-info {
+    color: #42a5f5 !important;
+}
+
+
+/* ===============================
+  FOOTER
+================================ */
+footer {
+  background-color: #1a237e; 
+}
+
+
+/* ===============================
+  RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  .map-frame-container {
+    height: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .map-frame-container {
+        height: 300px;
+    }
+}
+
+
+/* ===============================
+    LEGENDA PETA
+================================ */
+#legend {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px; 
+    
+    background: rgba(255, 255, 255, 0.98); 
+    padding: 15px 18px; 
+    border-radius: 8px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    z-index: 100; 
+    font-size: 15px; 
+    font-family: 'Poppins', sans-serif;
+    width: 280px; 
+}
+
+#legend h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 8px; 
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px; 
+}
+
+#legend span {
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #777; 
+}
+
+@media (max-width: 768px) {
+    #legend {
+        bottom: 10px; 
+        right: 10px;
+        font-size: 13px;
+        padding: 10px 12px;
+        width: 190px; 
+    }
+    
+    #legend h4 {
+        font-size: 15px;
+    }
+    
+    #legend span {
+        width: 14px;
+        height: 14px;
+    }
+}

@@ -1,165 +1,119 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Rofiq Abdul Luqman</title>
-    <!-- Menggunakan font premium dari Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIG PDAM Kabupaten Blora 2022</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            overflow-x: hidden;
-        }
-        .navbar {
-            background-color: #2c3e50;
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-        }
-        .navbar-toggler-icon {
-            background-color: white;
-        }
-        .header {
-            background-color: #34495e; /* Warna baru */
-            height: 400px;
-            color: white;
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .hero-section { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?q=80&w=2070') center/cover; 
             display: flex;
-            justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        .header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
-            z-index: -1;
-        }
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-        }
-        .header p {
-            font-size: 1.2rem;
-        }
-        .section {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-        .card {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card-body h5 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-        }
-        .card-body p {
-            font-size: 1rem;
-            color: #7f8c8d;
-        }
-        footer {
-            background-color: #2c3e50;
             color: white;
-            padding: 40px 0;
-            text-align: center;
         }
-        .btn-primary {
-            background-color: #f39c12;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #e67e22;
-        }
+        .section-title { font-weight: 700; border-left: 5px solid #0d6efd; padding-left: 15px; margin-bottom: 30px; }
     </style>
 </head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Portofolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="fa-solid fa-water me-2 text-info"></i>SIG PDAM BLORA</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Kontak</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#data-spasial">Peta Spasial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#data-non-spasial">Diagram & Tabel</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="header">
-        <div>
-            <h1>Selamat datang di Portofolio Saya</h1>
-            <p style="font-size: 1.1rem; font-weight: 400;">Saya Rofiq Abdul Luqman, seorang profesional dengan pengalaman di bidang teknologi, manajemen bisnis, dan desain kreatif. Temukan lebih lanjut tentang saya dan layanan yang saya tawarkan di sini.</p>
-        </div>
-    </div>
-
-    <div class="section text-center">
+    <section id="home" class="hero-section">
         <div class="container">
-            <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #2c3e50;">Keahlian Saya</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="teknologi.jpg" class="card-img-top" alt="Teknologi">
-                        <div class="card-body">
-                            <h5 class="card-title">Teknologi</h5>
-                            <p class="card-text">Keahlian saya mencakup berbagai teknologi terkini, termasuk pengembangan perangkat lunak, aplikasi web, dan solusi berbasis cloud.</p>
-                        </div>
+            <h1 class="display-3 fw-bold mb-3">Sistem Informasi Geografis Pelayanan Air Bersih</h1>
+            <p class="lead fs-4 mb-4">Kabupaten Blora - Provinsi Jawa Tengah <br> Analisis Data Tahun 2022</p>
+            <a href="#data-spasial" class="btn btn-primary btn-lg rounded-pill px-5 shadow">Mulai Eksplorasi</a>
+        </div>
+    </section>
+
+    <section id="data-spasial" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-primary">I. DATA SPASIAL (PETA)</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-9">
+                    <div class="card shadow border-0 overflow-hidden" style="height: 500px;">
+                        <iframe src="pdammap/index.html" style="width:100%; height:100%; border:none;"></iframe>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="desain grafis.jpg" class="card-img-top" alt="Desain Grafis">
-                        <div class="card-body">
-                            <h5 class="card-title">Desain Grafis</h5>
-                            <p class="card-text">Dengan pengalaman dalam desain grafis dan antarmuka pengguna (UI/UX), saya menciptakan desain yang tidak hanya menarik tetapi juga fungsional.</p>
+                <div class="col-lg-3">
+                    <div class="card shadow-sm border-0 p-3 h-100">
+                        <h6 class="fw-bold mb-3">Keterangan Rentang:</h6>
+                        <div class="mb-3">
+                            <span class="badge" style="background-color:#1565c0; width:15px; height:15px;">&nbsp;</span> 
+                            <small class="fw-bold d-block text-primary">SANGAT TINGGI</small>
+                            <small class="text-muted">≥ 3.000 Pelanggan</small>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="bisnis.jpg" class="card-img-top" alt="Strategi Bisnis">
-                        <div class="card-body">
-                            <h5 class="card-title">Strategi Bisnis</h5>
-                            <p class="card-text">Saya juga berpengalaman dalam merancang dan mengimplementasikan strategi bisnis untuk memastikan kesuksesan dan pertumbuhan jangka panjang.</p>
+                        <div class="mb-3">
+                            <span class="badge" style="background-color:#42a5f5; width:15px; height:15px;">&nbsp;</span> 
+                            <small class="fw-bold d-block text-info">SEDANG</small>
+                            <small class="text-muted">1.000 - 2.999 Pelanggan</small>
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge" style="background-color:#90caf9; width:15px; height:15px;">&nbsp;</span> 
+                            <small class="fw-bold d-block text-secondary">RENDAH</small>
+                            <small class="text-muted">1 - 999 Pelanggan</small>
+                        </div>
+                        <div class="mb-3">
+                            <span class="badge" style="background-color:#e53935; width:15px; height:15px;">&nbsp;</span> 
+                            <small class="fw-bold d-block text-danger">TIDAK ADA</small>
+                            <small class="text-muted">0 Pelanggan</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Rofiq Abdul Luqman | All Rights Reserved</p>
+    <section id="data-non-spasial" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-success">II. DATA NON-SPASIAL (ATRIBUT)</h2>
+            
+            <div class="card shadow-sm border-0 p-4 mb-5">
+                <h5 class="fw-bold mb-4">Diagram Perbandingan Pelanggan Per Kecamatan</h5>
+                <div style="height: 350px;">
+                    <canvas id="chartUtama"></canvas>
+                </div>
+            </div>
+
+            <div class="table-responsive shadow-lg rounded">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th>No</th>
+                            <th>Kecamatan</th>
+                            <th>Pelanggan</th>
+                            <th>Volume (m³)</th>
+                            <th>Pendapatan (Rp)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 text-center mt-5">
+        <p class="mb-0 small">© 2025 SIG PDAM Blora | Sumber: PDAM Kabupaten Blora</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
